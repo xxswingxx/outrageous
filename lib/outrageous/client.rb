@@ -1,6 +1,6 @@
 module Outrageous
   
-  attr_accessor :champiosn, :game,
+  attr_accessor :champions, :game, :items
   class Client
 
   end

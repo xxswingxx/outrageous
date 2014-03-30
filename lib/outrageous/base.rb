@@ -1,12 +1,13 @@
 require 'httparty'
 require 'json'
+require 'debugger'
 
 module Outrageous
 
   class Base
     include HTTParty
 
-    BASE_URI = 'https://prod.api.pvp.net/api/lol'
+    BASE_URI = 'https://prod.api.pvp.net'
 
     attr_accessor :region, :api_key
 

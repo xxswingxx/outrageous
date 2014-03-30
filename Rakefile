@@ -17,10 +17,11 @@ Jeweler::Tasks.new do |gem|
   gem.name = "outrageous"
   gem.homepage = "http://github.com/xxswingxx/outrageous"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "A ruby wrapper for the official League of Legends API in an outrageous package"
+  gem.description = "A ruby wrapper for the official League of Legends API in an outrageous package"
   gem.email = "vidadelaempresa@gmail.com"
   gem.authors = ["xxswingxx"]
+  gem.files = Dir.glob('lib/**/*.rb')
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

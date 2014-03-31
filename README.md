@@ -100,6 +100,46 @@ Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outra
 # GET /api/lol/static-data/{region}/v1/summoner-spell/{id} Retrieves summoner spell by its unique id. (REST)
 Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_spell_id, spellData: 'all', locale: 'es_ES')
 ```
+
+### stats-v1.2 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
+
+```ruby
+# GET /api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/ranked Get ranked stats by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift. (REST)
+Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageously-api-key').player_ranked_by_season(summoner_id, season)
+
+# GET /api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/summary Get player stats summaries by summoner ID. One summary is returned per queue type. (REST)
+Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageously-api-key').player_summary_by_season(summoner_id, season)
+
+```
+
+### summoner-v1.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
+
+Pleas keep in mind that the api limits 40 elements per request.
+
+```ruby
+# GET /api/lol/{region}/v1.3/summoner/by-name/{summonerNames} Get summoner objects mapped by standardized summoner name for a given list of summoner names or standardized summoner names (REST)
+Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_by_names([summoner_name1, summoner_name2, ...])
+
+# GET /api/lol/{region}/v1.3/summoner/{summonerIds} Get summoner objects mapped by summoner ID for a given list of summoner IDs (REST)
+Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_by_ids([summoner_id1, summoner_id2, ...])   
+
+# GET /api/lol/{region}/v1.3/summoner/{summonerIds}/masteries Get mastery pages mapped by summoner ID for a given list of summoner IDs (REST)
+Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_masteries([summoner_id1, summoner_id2, ...]) 
+
+# GET /api/lol/{region}/v1.3/summoner/{summonerIds}/name Get summoner names mapped by summoner ID for a given list of summoner IDs (REST)
+Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_names([summoner_id1, summoner_id2, ...]) 
+
+# GET /api/lol/{region}/v1.3/summoner/{summonerIds}/runes Get rune pages mapped by summoner ID for a given list of summoner IDs (REST)
+Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_runes([summoner_id1, summoner_id2, ...]) 
+```
+
+### team-v2.2 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR]
+
+```ruby
+# GET /api/lol/{region}/v2.2/team/by-summoner/{summonerId} Retrieves teams for given summoner ID. (REST)
+# GET /api/lol/{region}/v2.2/team/{teamIds} Get teams mapped by team ID for a given list of team IDs. (REST)
+```
+
 ## Contributing to Outrageous
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.

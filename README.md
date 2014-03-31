@@ -21,6 +21,7 @@ or place it in your Gemfile
 Grab yout API key from [here](https://developer.riotgames.com/) and now you are ready to use your Ruby for vigor. Example usage:
 
 ```ruby
+	# region is optional, by default it uses 'euw'
 	client = Outrageous::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key', region: 'euw')
 	client.all(freeToPlay: true)
 	client.response # => Hash
@@ -138,10 +139,24 @@ Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key')
 
 ```ruby
 # GET /api/lol/{region}/v2.2/team/by-summoner/{summonerId} Retrieves teams for given summoner ID. (REST)
+Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_by_summoner_id(summoner_id)
 
 # GET /api/lol/{region}/v2.2/team/{teamIds} Get teams mapped by team ID for a given list of team IDs. (REST)
-
+Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find_by_ids([team_id1, team_id2, ...])
 ```
+
+## F.A.Q
+
+* **_The API version has changed, you haven't updated the gem, what now?_** By default, Outrageous load the last api version. If you need to change it, pass the attribute version: 'vX.X' when initializing.
+* **_Why initialize an object with each request?_** I just wanted this gem to be multiuser, so it doesn't has to been globally initialized.
+* **_Responses in a hash looks ugly to me, why don't instantiate a ruby object?_** Maybe because I'm a bit lazy. Nah, just kidding (not really), I've been using several APIs and I really think that this system takes less maintainace and prevents the gem from being broken when the api is updated.
+* **_How do I access/find the attribute X from the Y resource? What options can I pass to the Z method? ANSWER OR DIE FAGGOT_** Please, read the API official [documentation](https://developer.riotgames.com/api/methods), probably you know more about the API than me.
+
+## Final comments
+
+And thats's all, play with this outrageous gem, break it and remember:
+
+> THEY CAN'T SAY NO WHEN THEY ARE STUNNED.
 
 ## Contributing to Outrageous
  

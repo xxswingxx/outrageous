@@ -8,9 +8,9 @@ module Outrageous
   end
 
   # GET /api/lol/{region}/v2.2/team/{teamIds} Get teams mapped by team ID for a given list of team IDs. (REST)
-  def find_by_teams_ids(teams_ids)
+  def find_by_ids(teams_ids)
     teams_ids = [teams_ids] if !teams_ids.is_a? Array
-    respond self.class.get("/api/lol/#{region}/#{version || TEAM_VERSION}/team/#{team_ids.join(',')}", query: { api_key: api_key })
+    respond self.class.get("/api/lol/#{region}/#{version || TEAM_VERSION}/team/#{teams_ids.join(',')}", query: { api_key: api_key })
   end
   end
 end

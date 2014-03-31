@@ -31,7 +31,7 @@ module Outrageous
     end 
 
     def get_challenger_info(type)
-      respond self.class.get("/api/lol/#{region}/v2.3/league/challenger", query: { api_key: api_key, type: type })
+      respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/challenger", query: { api_key: api_key, type: type })
     end
   end
 end

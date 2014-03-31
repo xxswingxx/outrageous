@@ -147,7 +147,7 @@ Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageously-api-key').fin
 
 ## F.A.Q
 
-* **_The API version has changed, you haven't updated the gem, what now?_** By default, Outrageous load the last api version. If you need to change it, pass the attribute version: 'vX.X' when initializing.
+* **_The API version has changed, you haven't updated the gem, what now?_** By default, Outrageous load the last API version. If you need to change it, pass the attribute ```version: 'vX.X'``` when initializing.
 * **_Why initialize an object with each request?_** I just wanted this gem to be multiuser, so it doesn't has to been globally initialized.
 * **_Responses in a hash looks ugly to me, why don't instantiate a ruby object?_** Maybe because I'm a bit lazy. Nah, just kidding (not really), I've been using several APIs and I really think that this system takes less maintainace and prevents the gem from being broken when the api is updated.
 * **_How do I access/find the attribute X from the Y resource? What options can I pass to the Z method? ANSWER OR DIE FAGGOT_** Please, read the API official [documentation](https://developer.riotgames.com/api/methods), probably you know more about the API than me.

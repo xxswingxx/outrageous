@@ -1,6 +1,6 @@
 require 'ostruct'
 
-%w(base champions game client items summoners).each { |filename| require "outrageous/#{ filename }" }
+%w(base champion game client item summoner).each { |filename| require "outrageous/#{ filename }" }
 
 module Outrageous
 

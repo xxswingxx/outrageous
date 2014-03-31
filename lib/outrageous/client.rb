@@ -1,7 +1,8 @@
 module Outrageous
   
-  attr_accessor :champions, :game, :items
-  class Client
+  class Client < Base
+
+  	attr_accessor :champions, :game, :items
 
   end
 end

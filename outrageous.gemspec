@@ -21,9 +21,12 @@ Gem::Specification.new do |s|
   s.files = [
     "lib/outrageous.rb",
     "lib/outrageous/base.rb",
-    "lib/outrageous/champions.rb",
+    "lib/outrageous/champion.rb",
     "lib/outrageous/client.rb",
-    "lib/outrageous/game.rb"
+    "lib/outrageous/game.rb",
+    "lib/outrageous/item.rb",
+    "lib/outrageous/mastery.rb",
+    "lib/outrageous/summoner.rb"
   ]
   s.homepage = "http://github.com/xxswingxx/outrageous"
   s.licenses = ["MIT"]

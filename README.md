@@ -22,8 +22,9 @@ Grab yout API key from [here](https://developer.riotgames.com/) and now you are 
 
 ```ruby
 	client = Outrageous::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key', region: 'euw')
-	response = client.all(freeToPlay: true)
-	response['champions'] 
+	client.all(freeToPlay: true)
+	client.response # => Hash
+	client.status # => 200, 401, 404 ... 
 ```
 
 ## API calls
@@ -137,7 +138,9 @@ Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageously-api-key')
 
 ```ruby
 # GET /api/lol/{region}/v2.2/team/by-summoner/{summonerId} Retrieves teams for given summoner ID. (REST)
+
 # GET /api/lol/{region}/v2.2/team/{teamIds} Get teams mapped by team ID for a given list of team IDs. (REST)
+
 ```
 
 ## Contributing to Outrageous

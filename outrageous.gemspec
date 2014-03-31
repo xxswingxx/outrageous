@@ -32,7 +32,8 @@ Gem::Specification.new do |s|
     "lib/outrageous/static_data/rune.rb",
     "lib/outrageous/static_data/summoner_spell.rb",
     "lib/outrageous/stats.rb",
-    "lib/outrageous/summoner.rb"
+    "lib/outrageous/summoner.rb",
+    "lib/outrageous/team.rb"
   ]
   s.homepage = "http://github.com/xxswingxx/outrageous"
   s.licenses = ["MIT"]

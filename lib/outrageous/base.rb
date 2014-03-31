@@ -15,6 +15,7 @@ module Outrageous
     STATS_VERSION = 'v1.2'
     STATIC_DATA_VERSION = 'v1'
     SUMMONER_VERSION = 'v1.3'
+    TEAM_VERSION = 'v2.2'
 
     attr_accessor :region, :api_key, :version, :response, :status
 

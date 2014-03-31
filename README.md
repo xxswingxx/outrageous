@@ -48,61 +48,35 @@ Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageously-api-key').fin
 ```ruby
 # GET /api/lol/static-data/{region}/v1/champion
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all
-```
 
-```ruby
 # GET /api/lol/static-data/{region}/v1/champion/{id}
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-```ruby
 # GET /api/lol/static-data/{region}/v1/item
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all
-```
 
-```ruby
+# GET /api/lol/static-data/{region}/v1/item/{id}
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/mastery``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/mastery
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/mastery/{id}``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/mastery/{id}
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/realm``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/realm
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/rune``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/rune
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/rune/{id}``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/rune/{id}
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/summoner-spell``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/summoner-spell
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
-```
 
-* ```GET /api/lol/static-data/{region}/v1/summoner-spell/{id}``` is mapped as:
-
-```ruby
+# GET /api/lol/static-data/{region}/v1/summoner-spell/{id}
 Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
 ```
 

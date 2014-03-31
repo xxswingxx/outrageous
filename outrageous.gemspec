@@ -11,21 +11,27 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["xxswingxx"]
-  s.date = "2014-03-30"
+  s.date = "2014-03-31"
   s.description = "A ruby wrapper for the official League of Legends API in an outrageous package"
   s.email = "vidadelaempresa@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     "lib/outrageous.rb",
     "lib/outrageous/base.rb",
     "lib/outrageous/champion.rb",
-    "lib/outrageous/client.rb",
     "lib/outrageous/game.rb",
-    "lib/outrageous/item.rb",
-    "lib/outrageous/mastery.rb",
+    "lib/outrageous/league.rb",
+    "lib/outrageous/static_data/base.rb",
+    "lib/outrageous/static_data/champion.rb",
+    "lib/outrageous/static_data/item.rb",
+    "lib/outrageous/static_data/mastery.rb",
+    "lib/outrageous/static_data/realm.rb",
+    "lib/outrageous/static_data/rune.rb",
+    "lib/outrageous/static_data/summoner_spell.rb",
+    "lib/outrageous/stats.rb",
     "lib/outrageous/summoner.rb"
   ]
   s.homepage = "http://github.com/xxswingxx/outrageous"
@@ -37,6 +43,7 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<httparty>, [">= 0"])
       s.add_development_dependency(%q<debugger>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
@@ -44,6 +51,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 2.0.1"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
+      s.add_dependency(%q<httparty>, [">= 0"])
       s.add_dependency(%q<debugger>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
@@ -52,6 +60,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<simplecov>, [">= 0"])
     end
   else
+    s.add_dependency(%q<httparty>, [">= 0"])
     s.add_dependency(%q<debugger>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])

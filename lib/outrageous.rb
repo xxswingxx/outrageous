@@ -1,6 +1,7 @@
 require 'ostruct'
-
-%w(base champion game client item mastery rune summoner summoner_spell).each { |filename| require "outrageous/#{ filename }" }
+require 'debugger'
+%w(base champion game league stats summoner).each { |filename| require "outrageous/#{filename}" }
+%w(base champion item mastery rune summoner_spell).each { |filename| require "outrageous/static_data/#{filename}" }
 
 module Outrageous
 

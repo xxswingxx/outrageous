@@ -2,20 +2,20 @@ module Outrageous
 
   class League < Base
 
-    def find_match_by_summoner_id(summoner_id)
+    def get_leagues_with_team_by_summoner_id(summoner_id)
       respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-summoner/#{summoner_id}", query: { api_key: api_key })
     end
 
-    def find_player_info_by_summoner_id(summer_id)
+    def get_leagues_entry_by_summoner_id(summoner_id)
       respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-summoner/#{summoner_id}/entry", query: { api_key: api_key })
     end
 
-    def find_match_by_team_id(summoner_id)
-      respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{summoner_id}", query: { api_key: api_key })
+    def get_leagues_by_team_id(team_id)
+      respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}", query: { api_key: api_key })
     end
 
-    def find_team_info_by_team_id(summer_id)
-      respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{summoner_id}/entry", query: { api_key: api_key })
+    def get_leagues_entry_by_team_id(team_id)
+      respond self.class.get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}/entry", query: { api_key: api_key })
     end
 
     def get_challenger_solo_q()

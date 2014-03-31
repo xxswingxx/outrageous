@@ -39,47 +39,67 @@ Outrageous::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key')
 
 ```ruby
 # GET /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
-Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id, champData: 'all', locale: 'es_ES')
+Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find summoner_id
+```
+
+## league-v2.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR] Show/Hide List OperationsExpand Operations
+
+```ruby
+# GET /api/lol/{region}/v2.3/league/by-summoner/{summonerId} Retrieves leagues data for summoner, including summoner's teams. (REST)
+Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_leagues_with_team_by_summoner_id(summoner_id)
+
+# GET /api/lol/{region}/v2.3/league/by-summoner/{summonerId}/entry Retrieves leagues entry data for summoner, including summoner's teams. (REST)
+Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_leagues_by_summoner_id(summoner_id)
+
+# GET /api/lol/{region}/v2.3/league/by-team/{teamId} Retrieves leagues data for team. (REST)
+Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_leagues_by_team_id(team_id)
+
+# GET /api/lol/{region}/v2.3/league/by-team/{teamId}/entry Retrieves leagues entry data for team. (REST)
+Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_leagues_entry_by_team_id(team_id)
+
+# GET /api/lol/{region}/v2.3/league/challenger Retrieves challenger tier leagues. (REST)
+Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_challenger_info(type)d
+
 ```
 
 ### lol-static-data-v1 [BR, EUNE, EUW, KR, LAN, LAS, NA, OCE, RU, TR] Show/Hide List OperationsExpand Operations
 
+Usually the methods are ```all(options = {})``` or ```find(id, options = {})```. Options hash is fully optional (REAAAAAALLYYY???).
 
 ```ruby
-# GET /api/lol/static-data/{region}/v1/champion
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all
+# GET /api/lol/static-data/{region}/v1/champion Retrieves champion list. (REST)
+Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all(champData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/champion/{id}
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/champion/{id} Retrieves a champion by its id. (REST)
+Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(champion_id, champData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/item
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all
+# GET /api/lol/static-data/{region}/v1/item Retrieves item list. (REST)
+Outrageous::StaticData::Item.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all(itemData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/item/{id}
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/item/{id} Retrieves item by its unique id. (REST)
+Outrageous::StaticData::Item.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(item_id, itemData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/mastery
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/mastery Retrieves mastery list. (REST)
+Outrageous::StaticData::Mastery.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all(masteryListData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/mastery/{id}
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/mastery/{id} Retrieves mastery item by its unique id. (REST)
+Outrageous::StaticData::Mastery.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id, masteryListData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/realm
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/realm Retrieve realm data. (REST)
+Outrageous::StaticData::Realm.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all
 
-# GET /api/lol/static-data/{region}/v1/rune
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/rune Retrieves rune list. (REST)
+Outrageous::StaticData::Rune.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all(runeListData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/rune/{id}
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/rune/{id} Retrieves rune by its unique id. (REST)
+Outrageous::StaticData::Rune.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(rune_id, runeListData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/summoner-spell
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/summoner-spell Retrieves summoner spell list. (REST)
+Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageously-api-key').all(spellData: 'all', locale: 'es_ES')
 
-# GET /api/lol/static-data/{region}/v1/summoner-spell/{id}
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
+# GET /api/lol/static-data/{region}/v1/summoner-spell/{id} Retrieves summoner spell by its unique id. (REST)
+Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_spell_id, spellData: 'all', locale: 'es_ES')
 ```
-
 ## Contributing to Outrageous
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.

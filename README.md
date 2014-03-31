@@ -41,7 +41,7 @@ Outrageous::Champion.new(api_key: 'your-truly-truly-truly-outrageously-api-key')
 
 ```ruby
 # GET /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
-Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find summoner_id
+Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageously-api-key').find(summoner_id)
 ```
 
 ## league-v2.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR] Show/Hide List OperationsExpand Operations

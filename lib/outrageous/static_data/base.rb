@@ -14,12 +14,12 @@ module Outrageous
 
       # List elements
       def all(options = {})
-        respond self.class.get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}", query: { api_key: api_key }.merge(options) })
+        get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}", options)
       end
 
       # Show a specific element
       def find(id, options = {})
-        respond self.class.get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}/#{id}", query: { api_key: api_key}.merge(options))
+        get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}/#{id}", options)
       end
 
       protected

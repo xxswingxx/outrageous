@@ -2,11 +2,11 @@ module Outrageous
 
   class Champion < Base
     def all(options = {})
-      respond self.class.get("/api/lol/#{region}/#{version || CHAMPION_VERSION}/champion", query: { api_key: api_key}.merge(options) )
+      get("/api/lol/#{region}/#{version || CHAMPION_VERSION}/champion", options)
     end
 
     def find(id, options = {})
-      respond self.class.get("/api/lol/#{region}/#{version || CHAMPION_VERSION}/champion#{id}", query: { api_key: api_key } )
+      get("/api/lol/#{region}/#{version || CHAMPION_VERSION}/champion/#{id}", options)
     end
   end
 end

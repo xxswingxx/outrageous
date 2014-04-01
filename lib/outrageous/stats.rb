@@ -2,12 +2,12 @@ module Outrageous
 
   class Stats < Base
 
-    def player_ranked_by_season(summoner_id, season = 4)
-      respond self.class.get("/api/lol/#{region}/#{version || STATS_VERSION}/stats/by-summoner/#{summoner_id}/ranked", query: { api_key: api_key, season: "SEASON#{season}" })
+    def player_ranked_by_season(summoner_id, options = { season: 'SEASON4'})
+      get("/api/lol/#{region}/#{version || STATS_VERSION}/stats/by-summoner/#{summoner_id}/ranked",  options)
     end
 
-    def player_summary_by_season(summoner_id, season = 4)
-      respond self.class.get("/api/lol/#{region}/#{version || STATS_VERSION}/stats/by-summoner/#{summoner_id}/summary", query: { api_key: api_key, season: "SEASON#{season}" })
+    def player_summary_by_season(summoner_id, options = { season: 'SEASON4'})
+      get("/api/lol/#{region}/#{version || STATS_VERSION}/stats/by-summoner/#{summoner_id}/summary",  options)
     end
   end
 end

@@ -14,12 +14,12 @@ module Outrageous
 
       # List elements
       def all(options = {})
-        respond self.class.get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}", query: { api_key: api_key, version: options[:version], self.class.data_key => options[self.class.data_key.to_s], locale: options[:locale] })
+        respond self.class.get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}", query: { api_key: api_key }.merge(options) })
       end
 
       # Show a specific element
       def find(id, options = {})
-        respond self.class.get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}/#{id}", query: { api_key: api_key, version: options[:version], self.class.data_key => options[self.class.data_key.to_s], locale: options[:locale] })
+        respond self.class.get("/api/lol/static-data/#{region}/#{version || STATIC_DATA_VERSION}/#{self.class.api_model}/#{id}", query: { api_key: api_key}.merge(options))
       end
 
       protected
@@ -32,19 +32,6 @@ module Outrageous
         class_eval <<-END
           def api_model
             '#{klass}'
-          end
-        END
-      end
-
-      def self.data_key(key)
-        instance_eval <<-END
-          def data_key
-            '#{key}'
-          end
-        END
-        class_eval <<-END
-          def data_key
-            '#{key}'
           end
         END
       end

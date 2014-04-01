@@ -22,6 +22,8 @@ Jeweler::Tasks.new do |gem|
   gem.email = "vidadelaempresa@gmail.com"
   gem.authors = ["xxswingxx"]
   gem.files = Dir.glob('lib/**/*.rb')
+  gem.post_install_message = "Gems are truly, truly, truly outrageous..."
+
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

@@ -12,7 +12,7 @@ module Outrageous
     CHAMPION_VERSION = 'v1.2'
     GAME_VERSION = 'v1.3'
     LEAGUE_VERSION = 'v2.3'
-    STATS_VERSION = 'v1.2'
+    STATS_VERSION = 'v1.3'
     STATIC_DATA_VERSION = 'v1'
     SUMMONER_VERSION = 'v1.4'
     TEAM_VERSION = 'v2.2'
@@ -26,16 +26,11 @@ module Outrageous
     end
 
     def region
-      'euw' if @region.nil? || @region.empty?
+      !%w(na br euw eune lan las oce).include?(@region) ? @region : 'euw'
     end
 
-    protected
     def get(url, options = {})
       response = self.class.get(url, query: { api_key: api_key }.merge(options))
-      self.status, self.response = response.code, response.parsed_response
-    end
-
-    def respond(response)
       self.status, self.response = response.code, response.parsed_response
     end
   end

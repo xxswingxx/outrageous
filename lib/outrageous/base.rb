@@ -31,7 +31,8 @@ module Outrageous
 
     def get(url, options = {})
       response = self.class.get(url, query: { api_key: api_key }.merge(options))
-      self.status, self.response = response.code, response.parsed_response
+      self.status= response.code
+      self.response  = response.parsed_response
     end
   end
 end

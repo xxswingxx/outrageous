@@ -2,24 +2,24 @@ module Outrageous
 
   class League < Base
 
-    def get_leagues_with_team_by_summoner_id(summoner_id)
-      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-summoner/#{summoner_id}")
+    def get_leagues_with_team_by_summoner_id(summoner_id, options = {})
+      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-summoner/#{summoner_id}", options)
     end
 
-    def get_leagues_entry_by_summoner_id(summoner_id)
-      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-summoner/#{summoner_id}/entry")
+    def get_leagues_entry_by_summoner_id(summoner_id, options = {})
+      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-summoner/#{summoner_id}/entry", options)
     end
 
-    def get_leagues_by_team_id(team_id)
-      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}")
+    def get_leagues_by_team_id(team_id, options = {})
+      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}", options)
     end
 
-    def get_leagues_entry_by_team_id(team_id)
-      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}/entry")
+    def get_leagues_entry_by_team_id(team_id, options = {})
+      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}/entry", options)
     end
     
-    def get_challenger_info(options)
-      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/challenger")
+    def get_challenger_info(options = { type: 'RANKED_SOLO_5_X_5' })
+      get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/challenger", options)
     end
 
     # Premade methods

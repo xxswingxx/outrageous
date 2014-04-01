@@ -9,8 +9,8 @@ group :development do
   gem "shoulda", "~> 3"
   gem "rdoc", "~> 3.12"
   gem "bundler", "~> 1.0"
-  gem "jeweler", "~> 2.0.1"
+  gem "jeweler", "~> 2.0"
   gem "simplecov", "~> 0.8"
 end
 
-gem 'httparty', "~> 0.13.0"
+gem 'httparty', "~> 0.13"

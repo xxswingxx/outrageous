@@ -1,5 +1,4 @@
 module Outrageous
-
   class Stats < Base
 
     def player_ranked_by_season(summoner_id, options = { season: 'SEASON4'})

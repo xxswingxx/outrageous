@@ -1,10 +1,10 @@
 module Outrageous
-
   class Summoner < Base
 
     def find_by_names(summoner_names = [], options = {})
+      summoner_names =
       summoner_names = [summoner_names] if !summoner_names.is_a? Array
-      get("/api/lol/#{region}/#{version || SUMMONER_VERSION}/summoner/by-name/#{summoner_names.join(',')}", options)
+      get("/api/lol/#{region}/#{version || SUMMONER_VERSION}/summoner/by-name/#{summoner_names.map { |s| URI::encode(s) }.join(',')}", options)
     end
 
     def find_by_ids(summoner_ids = [], options = {})      

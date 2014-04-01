@@ -1,5 +1,4 @@
 module Outrageous
-
   class Champion < Base
     def all(options = {})
       get("/api/lol/#{region}/#{version || CHAMPION_VERSION}/champion", options)

@@ -1,5 +1,4 @@
 module Outrageous
-
   class League < Base
 
     def get_leagues_with_team_by_summoner_id(summoner_id, options = {})
@@ -18,21 +17,22 @@ module Outrageous
       get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/by-team/#{team_id}/entry", options)
     end
     
-    def get_challenger_info(options = { type: 'RANKED_SOLO_5_X_5' })
+    def get_challenger_info(options = { type: 'RANKED_SOLO_5x5' })
       get("/api/lol/#{region}/#{version || LEAGUE_VERSION}/league/challenger", options)
     end
 
     # Premade methods
     def get_challenger_solo_q
-      get_challenger_info(type: 'RANKED_SOLO_5_X_5')
+                                 RANKED_SOLO_5x5
+      get_challenger_info(type: 'RANKED_SOLO_5x5')
     end
 
     def get_challenger_team_3_vs_3
-      get_challenger_info(type: 'RANKED_TEAM_3_X_3')
+      get_challenger_info(type: 'RANKED_TEAM_3x3')
     end
 
     def get_challenger_team_5_vs_5
-      get_challenger_info(type: 'RANKED_TEAM_5_X_5')      
+      get_challenger_info(type: 'RANKED_TEAM_5x5')      
     end 
   end
 end

@@ -60,7 +60,7 @@ Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').g
 Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_leagues_entry_by_team_id(team_id)
 
 # GET /api/lol/{region}/v2.3/league/challenger Retrieves challenger tier leagues. (REST)
-Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_challenger_info(type)d
+Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageously-api-key').get_challenger_info(type: RANKED_SOLO_5_X_5')
 
 ```
 

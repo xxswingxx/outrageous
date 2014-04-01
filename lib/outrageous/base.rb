@@ -26,7 +26,7 @@ module Outrageous
     end
 
     def region
-      %w(na br euw eune lan las oce).include?(@region) ? @region : 'euw'
+      !@region.nil? && !@region.empty? ? @region : 'euw'
     end
 
     def get(url, options = {})

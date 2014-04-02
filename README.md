@@ -47,20 +47,21 @@ Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(
 ## league-v2.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR]
 
 ```ruby
+client = Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/{region}/v2.3/league/by-summoner/{summonerId} Retrieves leagues data for summoner, including summoner's teams. (REST)
-Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key').get_leagues_with_team_by_summoner_id(summoner_id)
+client.get_leagues_with_team_by_summoner_id(summoner_id)
 
 # GET /api/lol/{region}/v2.3/league/by-summoner/{summonerId}/entry Retrieves leagues entry data for summoner, including summoner's teams. (REST)
-Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key').get_leagues_by_summoner_id(summoner_id)
+client.get_leagues_by_summoner_id(summoner_id)
 
 # GET /api/lol/{region}/v2.3/league/by-team/{teamId} Retrieves leagues data for team. (REST)
-Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key').get_leagues_by_team_id(team_id)
+client.get_leagues_by_team_id(team_id)
 
 # GET /api/lol/{region}/v2.3/league/by-team/{teamId}/entry Retrieves leagues entry data for team. (REST)
-Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key').get_leagues_entry_by_team_id(team_id)
+client.get_leagues_entry_by_team_id(team_id)
 
 # GET /api/lol/{region}/v2.3/league/challenger Retrieves challenger tier leagues. (REST)
-Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key').get_challenger_info(type: RANKED_SOLO_5_X_5')
+client.get_challenger_info(type: RANKED_SOLO_5_X_5')
 
 ```
 
@@ -69,48 +70,54 @@ Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key').get
 Usually the methods are ```all(options = {})``` or ```find(id, options = {})```. Options hash is fully optional (REAAAAAALLYYY???).
 
 ```ruby
+champions_client = Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageous-api-key').
 # GET /api/lol/static-data/{region}/v1/champion Retrieves champion list. (REST)
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all(champData: 'all', locale: 'es_ES')
+champions_client.all(champData: 'all', locale: 'es_ES')
 
 # GET /api/lol/static-data/{region}/v1/champion/{id} Retrieves a champion by its id. (REST)
-Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(champion_id, champData: 'all', locale: 'es_ES')
+champions_client..find(champion_id, champData: 'all', locale: 'es_ES')
 
+items_client = Outrageous::StaticData::Item.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/static-data/{region}/v1/item Retrieves item list. (REST)
-Outrageous::StaticData::Item.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all(itemData: 'all', locale: 'es_ES')
+items_client.all(itemData: 'all', locale: 'es_ES')
 
 # GET /api/lol/static-data/{region}/v1/item/{id} Retrieves item by its unique id. (REST)
-Outrageous::StaticData::Item.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(item_id, itemData: 'all', locale: 'es_ES')
+items_client.find(item_id, itemData: 'all', locale: 'es_ES')
 
+masteries_client = Outrageous::StaticData::Mastery.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/static-data/{region}/v1/mastery Retrieves mastery list. (REST)
-Outrageous::StaticData::Mastery.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all(masteryListData: 'all', locale: 'es_ES')
+masteries_client.all(masteryListData: 'all', locale: 'es_ES')
 
 # GET /api/lol/static-data/{region}/v1/mastery/{id} Retrieves mastery item by its unique id. (REST)
-Outrageous::StaticData::Mastery.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(summoner_id, masteryListData: 'all', locale: 'es_ES')
+masteries_clientfind(summoner_id, masteryListData: 'all', locale: 'es_ES')
 
 # GET /api/lol/static-data/{region}/v1/realm Retrieve realm data. (REST)
 Outrageous::StaticData::Realm.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all
 
+runes_client = Outrageous::StaticData::Rune.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/static-data/{region}/v1/rune Retrieves rune list. (REST)
-Outrageous::StaticData::Rune.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all(runeListData: 'all', locale: 'es_ES')
+runes_client.all(runeListData: 'all', locale: 'es_ES')
 
 # GET /api/lol/static-data/{region}/v1/rune/{id} Retrieves rune by its unique id. (REST)
-Outrageous::StaticData::Rune.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(rune_id, runeListData: 'all', locale: 'es_ES')
+runes_client.find(rune_id, runeListData: 'all', locale: 'es_ES')
 
+summoners_spells_client = Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/static-data/{region}/v1/summoner-spell Retrieves summoner spell list. (REST)
-Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all(spellData: 'all', locale: 'es_ES')
+summoners_spells_client.all(spellData: 'all', locale: 'es_ES')
 
 # GET /api/lol/static-data/{region}/v1/summoner-spell/{id} Retrieves summoner spell by its unique id. (REST)
-Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(summoner_spell_id, spellData: 'all', locale: 'es_ES')
+summoners_spells_client.find(summoner_spell_id, spellData: 'all', locale: 'es_ES')
 ```
 
 ### stats-v1.2 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
 
 ```ruby
+stats_client = Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/ranked Get ranked stats by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift. (REST)
-Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageous-api-key').player_ranked_by_season(summoner_id, season)
+stats_client.player_ranked_by_season(summoner_id, season)
 
 # GET /api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/summary Get player stats summaries by summoner ID. One summary is returned per queue type. (REST)
-Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageous-api-key').player_summary_by_season(summoner_id, season)
+stats_client.player_summary_by_season(summoner_id, season)
 
 ```
 
@@ -119,30 +126,32 @@ Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageous-api-key').play
 Pleas keep in mind that the api limits 40 elements per request.
 
 ```ruby
+summoners_client = Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/{region}/v1.3/summoner/by-name/{summonerNames} Get summoner objects mapped by standardized summoner name for a given list of summoner names or standardized summoner names (REST)
-Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_by_names([summoner_name1, summoner_name2, ...])
+summoners_client.find_by_names([summoner_name1, summoner_name2, ...])
 
 # GET /api/lol/{region}/v1.3/summoner/{summonerIds} Get summoner objects mapped by summoner ID for a given list of summoner IDs (REST)
-Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_by_ids([summoner_id1, summoner_id2, ...])   
+summoners_client.find_by_ids([summoner_id1, summoner_id2, ...])   
 
 # GET /api/lol/{region}/v1.3/summoner/{summonerIds}/masteries Get mastery pages mapped by summoner ID for a given list of summoner IDs (REST)
-Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_masteries([summoner_id1, summoner_id2, ...]) 
+summoners_clientfind_masteries([summoner_id1, summoner_id2, ...]) 
 
 # GET /api/lol/{region}/v1.3/summoner/{summonerIds}/name Get summoner names mapped by summoner ID for a given list of summoner IDs (REST)
-Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_names([summoner_id1, summoner_id2, ...]) 
+summoners_client.find_names([summoner_id1, summoner_id2, ...]) 
 
 # GET /api/lol/{region}/v1.3/summoner/{summonerIds}/runes Get rune pages mapped by summoner ID for a given list of summoner IDs (REST)
-Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_runes([summoner_id1, summoner_id2, ...]) 
+summoners_client.find_runes([summoner_id1, summoner_id2, ...]) 
 ```
 
 ### team-v2.2 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR]
 
 ```ruby
+teams_client = Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
 # GET /api/lol/{region}/v2.2/team/by-summoner/{summonerId} Retrieves teams for given summoner ID. (REST)
-Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_by_summoner_id(summoner_id)
+teams_client.find_by_summoner_id(summoner_id)
 
 # GET /api/lol/{region}/v2.2/team/{teamIds} Get teams mapped by team ID for a given list of team IDs. (REST)
-Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_by_ids([team_id1, team_id2, ...])
+teams_client.find_by_ids([team_id1, team_id2, ...])
 ```
 
 ## F.A.Q
@@ -157,6 +166,7 @@ Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find_
 And thats's all, play with this outrageous gem, break it and remember:
 
 > THEY CAN'T SAY NO WHEN THEY ARE STUNNED.
+
 
 ## Contributing to Outrageous
  

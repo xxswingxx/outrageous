@@ -48,6 +48,7 @@ Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(
 
 ```ruby
 client = Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/{region}/v2.3/league/by-summoner/{summonerId} Retrieves leagues data for summoner, including summoner's teams. (REST)
 client.get_leagues_with_team_by_summoner_id(summoner_id)
 
@@ -70,7 +71,8 @@ client.get_challenger_info(type: RANKED_SOLO_5_X_5')
 Usually the methods are ```all(options = {})``` or ```find(id, options = {})```. Options hash is fully optional (REAAAAAALLYYY???).
 
 ```ruby
-champions_client = Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageous-api-key').
+champions_client = Outrageous::StaticData::Champion.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/static-data/{region}/v1/champion Retrieves champion list. (REST)
 champions_client.all(champData: 'all', locale: 'es_ES')
 
@@ -78,6 +80,7 @@ champions_client.all(champData: 'all', locale: 'es_ES')
 champions_client..find(champion_id, champData: 'all', locale: 'es_ES')
 
 items_client = Outrageous::StaticData::Item.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/static-data/{region}/v1/item Retrieves item list. (REST)
 items_client.all(itemData: 'all', locale: 'es_ES')
 
@@ -85,6 +88,7 @@ items_client.all(itemData: 'all', locale: 'es_ES')
 items_client.find(item_id, itemData: 'all', locale: 'es_ES')
 
 masteries_client = Outrageous::StaticData::Mastery.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/static-data/{region}/v1/mastery Retrieves mastery list. (REST)
 masteries_client.all(masteryListData: 'all', locale: 'es_ES')
 
@@ -95,6 +99,7 @@ masteries_clientfind(summoner_id, masteryListData: 'all', locale: 'es_ES')
 Outrageous::StaticData::Realm.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all
 
 runes_client = Outrageous::StaticData::Rune.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/static-data/{region}/v1/rune Retrieves rune list. (REST)
 runes_client.all(runeListData: 'all', locale: 'es_ES')
 
@@ -102,6 +107,7 @@ runes_client.all(runeListData: 'all', locale: 'es_ES')
 runes_client.find(rune_id, runeListData: 'all', locale: 'es_ES')
 
 summoners_spells_client = Outrageous::StaticData::SummonerSpell.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/static-data/{region}/v1/summoner-spell Retrieves summoner spell list. (REST)
 summoners_spells_client.all(spellData: 'all', locale: 'es_ES')
 
@@ -113,6 +119,7 @@ summoners_spells_client.find(summoner_spell_id, spellData: 'all', locale: 'es_ES
 
 ```ruby
 stats_client = Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/ranked Get ranked stats by summoner ID. Includes statistics for Twisted Treeline and Summoner's Rift. (REST)
 stats_client.player_ranked_by_season(summoner_id, season)
 
@@ -127,6 +134,7 @@ Pleas keep in mind that the api limits 40 elements per request.
 
 ```ruby
 summoners_client = Outrageous::Summoner.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/{region}/v1.3/summoner/by-name/{summonerNames} Get summoner objects mapped by standardized summoner name for a given list of summoner names or standardized summoner names (REST)
 summoners_client.find_by_names([summoner_name1, summoner_name2, ...])
 
@@ -147,6 +155,7 @@ summoners_client.find_runes([summoner_id1, summoner_id2, ...])
 
 ```ruby
 teams_client = Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
+
 # GET /api/lol/{region}/v2.2/team/by-summoner/{summonerId} Retrieves teams for given summoner ID. (REST)
 teams_client.find_by_summoner_id(summoner_id)
 

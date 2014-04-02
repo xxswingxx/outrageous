@@ -30,21 +30,21 @@ Grab yout API key from [here](https://developer.riotgames.com/) and now you are 
 
 ## API calls
 
-### champion-v1.1 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
+### champion
 	
 ```ruby
 # GET /api/lol/{region}/v1.1/champion
 Outrageous::Champion.new(api_key: 'your-truly-truly-truly-outrageous-api-key').all(champData: 'all', locale: 'es_ES')
 ``` 
 
-### game-v1.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
+### game
 
 ```ruby
 # GET /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent
 Outrageous::Game.new(api_key: 'your-truly-truly-truly-outrageous-api-key').find(summoner_id)
 ```
 
-## league-v2.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR]
+### league
 
 ```ruby
 client = Outrageous::League.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
@@ -66,7 +66,7 @@ client.get_challenger_info(type: RANKED_SOLO_5_X_5')
 
 ```
 
-### lol-static-data-v1 [BR, EUNE, EUW, KR, LAN, LAS, NA, OCE, RU, TR]
+### lol-static-data
 
 Usually the methods are ```all(options = {})``` or ```find(id, options = {})```. Options hash is fully optional (REAAAAAALLYYY???).
 
@@ -115,7 +115,7 @@ summoners_spells_client.all(spellData: 'all', locale: 'es_ES')
 summoners_spells_client.find(summoner_spell_id, spellData: 'all', locale: 'es_ES')
 ```
 
-### stats-v1.2 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
+### stats
 
 ```ruby
 stats_client = Outrageous::Stats.new(api_key: 'your-truly-truly-truly-outrageous-api-key')
@@ -128,7 +128,7 @@ stats_client.player_summary_by_season(summoner_id, season)
 
 ```
 
-### summoner-v1.3 [BR, EUNE, EUW, LAN, LAS, NA, OCE]
+### summoner
 
 Pleas keep in mind that the api limits 40 elements per request.
 
@@ -151,7 +151,7 @@ summoners_client.find_names([summoner_id1, summoner_id2, ...])
 summoners_client.find_runes([summoner_id1, summoner_id2, ...]) 
 ```
 
-### team-v2.2 [BR, EUNE, EUW, LAN, LAS, NA, OCE, RU, TR]
+### team
 
 ```ruby
 teams_client = Outrageous::Team.new(api_key: 'your-truly-truly-truly-outrageous-api-key')

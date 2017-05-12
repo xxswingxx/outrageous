@@ -1,6 +1,6 @@
 # Outrageous
 
-Outrageous is a ruby wrapper in the form of a outrageous gem for the official [League of Legends API](https://developer.riotgames.com/).
+Outrageous is a ruby wrapper in the form of an outrageous gem for the official [League of Legends API](https://developer.riotgames.com/).
 
 ![Gems are truly, truly, truly outrageous...](http://x1.fjcdn.com/comments/4256386+_35ff0c0c528c84aacf20464730f61b4f.jpg "Gems are truly, truly, truly outrageous...")
 
@@ -166,7 +166,7 @@ teams_client.find_by_ids([team_id1, team_id2, ...])
 ## F.A.Q
 
 * **_The API version has changed, you haven't updated the gem, what now?_** By default, Outrageous loads the last API version. If you need to change it, pass the attribute ```version: 'vX.X'``` when initializing.
-* **_Why initialize an object with each request?_** I just wanted this gem to be multiuser, so it doesn't has to been globally initialized.
+* **_Why initialize an object with each request?_** I just wanted this gem to be multiuser, so it doesn't have to be globally initialized.
 * **_Responses in a hash looks ugly to me, why don't instantiate a ruby object?_** Maybe because I'm a bit lazy. Nah, just kidding (not really), I've been using several APIs and I really think that this system takes less maintainace and prevents the gem from being broken when the api is updated.
 * **_How do I access/find the attribute X from the Y resource? What options can I pass to the Z method? ANSWER OR DIE FAGGOT_** Please, read the API official [documentation](https://developer.riotgames.com/api/methods), you probably have more knowledge about the API than me.
 
